@@ -12,4 +12,11 @@ import "../styles/index.scss";
 import { Home } from "./component/home.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let number = 0;
+setInterval(() => {
+	number = number + 1;
+	ReactDOM.render(
+		<Home number={number.toString()} />,
+		document.querySelector("#app")
+	);
+}, 1000);
